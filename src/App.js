@@ -20,14 +20,14 @@ registerLocale('ru', ru)
 setDefaultLocale('ru')
 
 function App() {
-  const [data, setData] = useState([])
+  const [data, setData] = useState(null)
   const [startDate, setStartDate] = useState(new Date(new Date().getTime() - 86400000 * 90));
   const [endDate, setEndDate] = useState(new Date());
 
   useEffect(() => {
     fetchChartData(startDate, endDate)
       .then(response => setData(dataMap(response)))
-  }, [])
+  }, []) // eslint-disable-line
 
   const onDateChange = (dates) => {
     const [start, end] = dates;
