@@ -5,6 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 code {
@@ -12,7 +17,18 @@ code {
     monospace;
 }
 
-.App {
+.chart-container {
   width: 100vw;
-  height: 99vh;
+  /*16:9 Aspect ratio*/
+  padding-top: 56.25%;
+  position: relative;
 }
+
+.chart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 30px;
+}
+
